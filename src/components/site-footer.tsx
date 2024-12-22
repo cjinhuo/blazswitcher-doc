@@ -17,9 +17,13 @@ export function SiteFooter() {
           <div className='space-y-4'>
             <h4 className='font-semibold'>Product</h4>
             <ul className='space-y-3'>
-              {['Download', 'Changelog', 'Pricing', 'Blog'].map((item) => (
+              {['Download', 'Changelog'].map((item) => (
                 <li key={item}>
-                  <Link href='#' className='text-sm text-muted-foreground hover:text-foreground transition-colors'>
+                  <Link
+                    href='#'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-sm text-muted-foreground hover:text-foreground transition-colors'>
                     {item}
                   </Link>
                 </li>
@@ -31,9 +35,13 @@ export function SiteFooter() {
           <div className='space-y-4'>
             <h4 className='font-semibold'>Resources</h4>
             <ul className='space-y-3'>
-              {['Documentation', 'API Reference', 'Support', 'Store'].map((item) => (
+              {['Personal Blog', 'Documentation', 'API Reference'].map((item) => (
                 <li key={item}>
-                  <Link href='#' className='text-sm text-muted-foreground hover:text-foreground transition-colors'>
+                  <Link
+                    href='#'
+                    target='_blank'
+                    rel='noopener noreferrer'
+                    className='text-sm text-muted-foreground hover:text-foreground transition-colors'>
                     {item}
                   </Link>
                 </li>
@@ -49,11 +57,12 @@ export function SiteFooter() {
               © {new Date().getFullYear()} Blazwitcher. All rights reserved.
             </p>
             <div className='flex items-center space-x-6 mt-4 sm:mt-0'>
-              <Link href='#' className='text-sm text-muted-foreground hover:text-foreground transition-colors'>
+              <Link
+                href='https://github.com/cjinhuo/blazwitcher/blob/master/docs/privacy.md'
+                target='_blank'
+                rel='noopener noreferrer'
+                className='text-sm text-muted-foreground hover:text-foreground transition-colors'>
                 Privacy Policy
-              </Link>
-              <Link href='#' className='text-sm text-muted-foreground hover:text-foreground transition-colors'>
-                Terms of Service
               </Link>
             </div>
           </div>
