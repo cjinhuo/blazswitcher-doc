@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import { Download } from 'lucide-react'
 
 export function SiteFooter() {
   return (
@@ -9,10 +8,9 @@ export function SiteFooter() {
           {/* Logo and Description */}
           <div className='space-y-4'>
             <Link href='/' className='flex items-center space-x-2'>
-              <Download className='h-5 w-5' />
               <span className='font-bold'>Blazwitcher</span>
             </Link>
-            <p className='text-sm text-muted-foreground'>Supercharge your productivity with Blazwitcher.</p>
+            <p className='text-sm text-muted-foreground'>Supercharge your browsing experience with Blazwitcher.</p>
           </div>
 
           {/* Product Links */}
