@@ -1,10 +1,17 @@
-import * as React from 'react'
-import { Slot } from '@radix-ui/react-slot'
-import { cva, type VariantProps } from 'class-variance-authority'
-
+import { Button } from '@/components/ui/button'
 import { cn } from '@/lib/utils'
+import { cva } from 'class-variance-authority'
+import Link from 'next/link'
+import { ComponentPropsWithoutRef } from 'react'
 
-const buttonVariants = cva(
+interface LinkButtonProps extends ComponentPropsWithoutRef<typeof Link> {
+  variant?: ComponentPropsWithoutRef<typeof Button>['variant']
+  size?: ComponentPropsWithoutRef<typeof Button>['size']
+  className?: string
+  isExternal?: boolean
+}
+
+const linkButtonVariants = cva(
   'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0',
   {
     variants: {
@@ -30,18 +37,20 @@ const buttonVariants = cva(
   }
 )
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+export const LinkButton = ({
+  className,
+  variant,
+  size,
+  isExternal = false,
+  href,
+  children,
+  ...props
+}: LinkButtonProps) => {
+  const linkProps = isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {}
+
+  return (
+    <Link href={href} {...linkProps} {...props} className={cn(linkButtonVariants({ variant, size, className }))}>
+      {children}
+    </Link>
+  )
 }
-
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : 'button'
-    return <Comp className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props} />
-  }
-)
-Button.displayName = 'Button'
-
-export { Button, buttonVariants }

@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Button } from '@/components/ui/button'
-import { Download, Github } from 'lucide-react'
+import { Github } from 'lucide-react'
 import { ModeToggle } from '@/components/mode-toggle'
 
 export function SiteHeader() {

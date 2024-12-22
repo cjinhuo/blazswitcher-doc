@@ -2,8 +2,9 @@ import { Button } from '@/components/ui/button'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
 import { FeatureCarousel } from '@/components/feature-carousel'
-import { Download, ComputerIcon as Windows } from 'lucide-react'
+import { ComputerIcon as Windows } from 'lucide-react'
 import YoutubeEmbed from '@/components/youtube-embed'
+import { LinkButton } from '@/components/ui/link-button'
 
 export default function Home() {
   return (
@@ -26,10 +27,14 @@ export default function Home() {
               <br />
             </p>
             <div className='space-x-4'>
-              <Button size='lg' className='h-12'>
-                <Download className='mr-2 h-4 w-4' />
-                Download for Mac
-              </Button>
+              <LinkButton
+                href='https://chromewebstore.google.com/detail/blazwitcher-fuzzy-pinyin/fjgablnemienkegdnbihhemebmmonihg'
+                size='lg'
+                className='h-12'
+                isExternal>
+                {/* <BrowserPlus className='mr-2 h-4 w-4' /> */}
+                Install By Chrome Extension Store
+              </LinkButton>
               <Button size='lg' variant='outline' className='h-12'>
                 <Windows className='mr-2 h-4 w-4' />
                 Join Windows waitlist
