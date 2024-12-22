@@ -26,14 +26,14 @@ export default function Home() {
               A Browser Extension for searching tabs, bookmarks, and history, with support for fuzzy Pinyin search.
               <br />
             </p>
-            <div className='space-x-4'>
+            <div className='space-x-4 flex items-center'>
               <LinkButton
                 href='https://chromewebstore.google.com/detail/blazwitcher-fuzzy-pinyin/fjgablnemienkegdnbihhemebmmonihg'
                 size='lg'
                 className='h-12'
                 isExternal>
                 {/* <BrowserPlus className='mr-2 h-4 w-4' /> */}
-                Install By Chrome Extension Store
+                通过插件商店安装
               </LinkButton>
               <Button size='lg' variant='outline' className='h-12'>
                 <Windows className='mr-2 h-4 w-4' />
@@ -41,11 +41,14 @@ export default function Home() {
               </Button>
             </div>
             <div className='flex flex-col items-center space-y-4 mt-4'>
-              <p className='text-xs text-muted-foreground'>v0.33 | Chrome 100+ | Install via Extension Store</p>
-              <Button variant='outline' size='sm' className='h-8 rounded-full border-muted px-4'>
-                Blazwitcher for iOS
-                <span className='ml-2 text-muted-foreground'>Join waitlist →</span>
-              </Button>
+              <p className='text-xs text-muted-foreground'>v0.33 | Chrome | Arc | Edge | Install via Extension Store</p>
+              <LinkButton
+                href='https://github.com/cjinhuo/text-search-engine'
+                size='sm'
+                className='h-8 rounded-full border-muted px-4'>
+                获取同款拼音搜索算法
+                <span className='ml-2 text-muted-foreground'>Text Search Engine →</span>
+              </LinkButton>
             </div>
           </div>
         </section>
