@@ -10,13 +10,24 @@ const geist = Geist({
 })
 
 export const metadata: Metadata = {
-  title: 'Blazwitcher Clone',
-  description: 'Your shortcut to everything',
+  title: 'BlazWitcher - Ultimate Smooth Pinyin Search',
+  description: 'A Browser Extension for searching tabs, bookmarks, and history, with support for fuzzy Pinyin search.',
+  icons: {
+    icon: [
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+  },
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang='en' suppressHydrationWarning>
+      <head>
+        <link rel='icon' type='image/svg+xml' href='/icon.svg' />
+      </head>
       <body className={`${geist.variable} font-sans antialiased`}>
         <ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
           <div className='fixed top-4 right-4 z-50'>
